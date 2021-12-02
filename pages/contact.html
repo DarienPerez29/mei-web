@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mei - Contacto</title>
+
+    <link rel="icon" href="../img/logos/mei_logo_s_rounded.svg">
+    <link rel="apple-touch-icon" href="../img/mei_logo_s_rounded.svg">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <navbar-general></navbar-general>
+
+    <div class="container-fluid text-mei">
+
+        <div class="row align-items-center px-3 px-lg-5 justify-content-center my-5">
+            <div class="text-center col-xxl-6 col-11">
+                <h1><strong>Contacto</strong></h1>
+                <hr class="mx-auto" style="color:var(--secondary);">
+                <p class="lead text-center">
+                    Para cualquier duda con el sistema de punto de venta Mei, contáctanos.
+                </p>
+            </div>
+
+            <div class="col-md-7 col-lg-8 mt-3">
+                <form class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label class="form-label">Nombre(s)</label>
+                            <input type="text" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingresa tu(s) nombre(s)
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label">Apellido(s)</label>
+                            <input type="text" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingresa tu(s) apellido(s)
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="correo@ejemplo.com" required>
+                            <div class="invalid-feedback">
+                                Ingresa un correo electrónico válido
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Tu empresa</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control" required style="height: 150px;"></textarea>
+                            <div class="invalid-feedback">
+                                Escribe tu mensaje, situación o pregunta
+                            </div>
+                        </div>
+                        <button class="mx-2 mt-5 w-25 col-12 btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto">
+        <footer-basic></footer-basic>
+    </footer>
+
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../modules/main.js"></script>
+    <script src="../scripts/form-validation.js"></script>
+</body>
+
+
+
+</html>

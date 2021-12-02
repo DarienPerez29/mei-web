@@ -1,0 +1,50 @@
+:root {
+    --secondary: #2BD5C8;
+    --bg-light-2: #fafafa;
+}
+
+.img-carousel {
+    height: 70vh;
+    object-fit: cover;
+}
+
+@media only screen and (min-device-width: 200px) and (orientation: portrait) {
+    .img-carousel {
+        height: 45vw;
+        object-fit: cover;
+    }
+}
+
+.bg-mei-secondary-area {
+    background-color: var(--bg-light-2);
+}
+
+.carousel {
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.text-mei {
+    color: #404040;
+}
+
+ul {
+    list-style: none;
+}
+
+.li-mei li::before {
+    content: "\2022";
+    color: var(--secondary);
+    font-weight: 1000;
+    display: inline-block;
+    width: 1em;
+    margin-left: -2em;
+}
+
+hr {
+    border: 1.5px solid;
+    border-radius: 1px;
+}
+
+
+/* Estilos para login */
