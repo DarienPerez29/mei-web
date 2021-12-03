@@ -18,53 +18,71 @@
 
     <div class="container-fluid text-mei align-self-center">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-xl-6 col-xxl-5">
+            <div class="col-12 col-md-10 col-xl-7 col-xxl-6">
                 <!-- Formulario -->
-                <form action="../bd/registrar.php" method="post" class="form-signin bg-white rounded-4 shadow m-auto w-auto p-5 container-fluid">
+                <form action="../bd/registrar.php" method="post" class="form-signin bg-white rounded-4 shadow m-auto w-auto p-5 container-fluid needs-validation" novalidate>
                     <div class="row justify-content-center py-5">
                         <div class="col-12 col-md-10 col-lg-9">
                             <img class="mb-4" src="../img/logos/mei_logo_s_transparent.svg" width="100" height="100">
                             <h2 class="fw-bold">Crear cuenta</h2>
                             <!-- Campos del formulario -->
 
-                            <div class="container-fluid px-3 mt-5">
+                            <div class="container-fluid px-3 mt-5 text-start">
                                 <div class="row">
                                     <div class="form-floating ps-0 col-6">
                                         <input type="text" class="form-control" required placeholder="Nombre(s)" name="nombre">
                                         <label for="floatingInput">Nombre(s)</label>
+                                        <div class="invalid-feedback">
+                                            Ingresa tu(s) nombre(s)
+                                        </div>
                                     </div>
                                     <div class="form-floating px-0 col-6">
                                         <input type="text" class="form-control" required placeholder="Apellido(s)" name="apellidos">
                                         <label for="floatingInput">Apellido(s)</label>
+                                        <div class="invalid-feedback">
+                                            Ingresa tu(s) apellido(s)
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div class="container-fluid px-3 mt-3">
+                            <div class="container-fluid px-3 mt-3 text-start">
                                 <div class="row">
                                     <div class="form-floating ps-0 col-6">
-                                        <input type="text" class="form-control" placeholder="Nombre de la empresa" name="nombremp">
+                                        <input type="text" class="form-control" placeholder="Nombre de la empresa" name="nombremp" novalidate>
                                         <label for="floatingInput">Empresa</label>
                                     </div>
                                     <div class="form-floating px-0 col-6">
-                                        <input type="text" class="form-control" required placeholder="Teléfono" name="tel">
+                                        <input type="text" pattern="[0-9]{10}" class="form-control" required placeholder="Teléfono" name="tel">
                                         <label for="floatingInput">Teléfono</label>
+                                        <div class="invalid-feedback">
+                                            Ingresa un número de teléfono válido
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-floating mt-3 px-1">
+                            <div class="form-floating mt-3 px-1 text-start">
                                 <input type="email" class="form-control" required placeholder="Correo eléctronico" name="correo">
                                 <label for="floatingPassword">Correo eléctronico</label>
+                                <div class="invalid-feedback">
+                                    Ingresa una dirección de correo electrónico válida
+                                </div>
                             </div>
-                            <div class="form-floating mt-3 px-1">
+                            <div class="form-floating mt-3 px-1 text-start">
                                 <input type="text" class="form-control" required placeholder="Nombre de usuario" name="usuario">
                                 <label for="floatingPassword">Nombre de usuario</label>
+                                <div class="invalid-feedback">
+                                    Ingresa un nombre de usuario
+                                </div>
                             </div>
-                            <div class="form-floating mt-3 px-1">
-                                <input type="password" class="form-control" required placeholder="contraseña" name="contraseña">
+                            <div class="form-floating mt-3 px-1 text-start">
+                                <input type="password" pattern=".{8,}" class="form-control" required placeholder="contraseña" name="contraseña">
                                 <label for="floatingPassword">Contraseña</label>
+                                <div class="invalid-feedback">
+                                    Ingresa una contraseña (mínimo 8 caracteres)
+                                </div>
                             </div>
                             <button class="w-100 btn btn-lg btn-primary my-4" type="submit" name="btnregistrar">Registrarse</button>
                         </div>
@@ -74,7 +92,7 @@
             </div>
         </div>
     </div>
-
+    <script src="../form-validation.js"></script>
 
 
 </body>
