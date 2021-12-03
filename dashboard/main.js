@@ -161,6 +161,7 @@ $(document).ready(function() {
         cantidad = $.trim($("#cantidad").val());
         precio = $.trim($("#precio").val());
         codigo = $.trim($("#codigo").val());
+
         $.ajax({
             url: "bd/crud.php",
             type: "POST",

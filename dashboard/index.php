@@ -105,9 +105,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <div class="form-group">
                     <label for="nombre" class="col-form-label">Nombre:</label>
                     <input type="text" class="form-control" id="nombre" required>
-                    <div class="invalid-feedback">
-                        Ingresa el nombre del producto
-                    </div>
                 </div>
                 <div class="form-group">
                     <label for="pais" class="col-form-label">Marca:</label>
