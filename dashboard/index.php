@@ -100,27 +100,30 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        <form id="formProductos">    
+        <form id="formProductos" class="needs-validation">    
             <div class="modal-body">
                 <div class="form-group">
-                <label for="nombre" class="col-form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre">
+                    <label for="nombre" class="col-form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                    <div class="invalid-feedback">
+                        Ingresa el nombre del producto
+                    </div>
                 </div>
                 <div class="form-group">
-                <label for="pais" class="col-form-label">Marca:</label>
-                <input type="text" class="form-control" id="marca">
+                    <label for="pais" class="col-form-label">Marca:</label>
+                    <input type="text" class="form-control" id="marca" required>
                 </div>                
                 <div class="form-group">
-                <label for="pais" class="col-form-label">Codigo:</label>
-                <input type="text" class="form-control" id="codigo">
+                    <label for="pais" class="col-form-label">Codigo:</label>
+                    <input type="text" class="form-control" id="codigo" required>
                 </div>                
                 <div class="form-group">
-                <label for="edad" class="col-form-label">Cantidad:</label>
-                <input type="number" class="form-control" id="cantidad">
+                    <label for="edad" class="col-form-label">Cantidad:</label>
+                    <input type="number" class="form-control" id="cantidad" required>
                 </div>            
                 <div class="form-group">
-                <label for="edad" class="col-form-label">Precio:</label>
-                <input type="number" class="form-control" id="precio">
+                    <label for="edad" class="col-form-label">Precio:</label>
+                    <input type="number" class="form-control" id="precio" required>
                 </div>            
             </div>
             <div class="modal-footer">

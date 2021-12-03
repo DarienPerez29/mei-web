@@ -3,7 +3,7 @@ $(document).ready(function() {
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-secondary btnRestar'> - </button><button class='btn btn-success btnAumentar'> + </button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
         }],
 
         "language": {
@@ -76,6 +76,82 @@ $(document).ready(function() {
                 }
             });
         }
+    });
+
+    //botón RESTAR
+    $(document).on("click", ".btnRestar", function() {
+        fila = $(this).closest("tr");
+        id = parseInt(fila.find('td:eq(0)').text());
+        nombre = fila.find('td:eq(1)').text();
+        marca = fila.find('td:eq(2)').text();
+        cantidad = parseInt(fila.find('td:eq(3)').text());
+        precio = parseInt(fila.find('td:eq(4)').text());
+        codigo = fila.find('td:eq(5)').text();
+
+        $("#nombre").val(nombre);
+        $("#marca").val(marca);
+        $("#cantidad").val(cantidad);
+        $("#precio").val(precio);
+        $("#codigo").val(codigo);
+
+        opcion = 4 //restar
+        if (cantidad > 0) {
+            $.ajax({
+                url: "bd/crud.php",
+                type: "POST",
+                dataType: "json",
+                data: { nombre: nombre, marca: marca, cantidad: cantidad, precio: precio, codigo: codigo, id: id, opcion: opcion },
+
+                success: function(data) {
+                    id = data[0].id;
+                    nombre = data[0].nombre;
+                    marca = data[0].marca;
+                    cantidad = data[0].cantidad;
+                    precio = data[0].precio;
+                    codigo = data[0].codigo;
+                    tablaProductos.row(fila).data([id, nombre, marca, cantidad, precio, codigo]).draw();
+                }
+            });
+        } else {
+            confirm("Ya no puede eliminar más artículos");
+        }
+    });
+
+    //botón AUMENTAR
+    $(document).on("click", ".btnAumentar", function() {
+        fila = $(this).closest("tr");
+        id = parseInt(fila.find('td:eq(0)').text());
+        nombre = fila.find('td:eq(1)').text();
+        marca = fila.find('td:eq(2)').text();
+        cantidad = parseInt(fila.find('td:eq(3)').text());
+        precio = parseInt(fila.find('td:eq(4)').text());
+        codigo = fila.find('td:eq(5)').text();
+
+        $("#nombre").val(nombre);
+        $("#marca").val(marca);
+        $("#cantidad").val(cantidad);
+        $("#precio").val(precio);
+        $("#codigo").val(codigo);
+
+        opcion = 5 //aumentar
+
+        $.ajax({
+            url: "bd/crud.php",
+            type: "POST",
+            dataType: "json",
+            data: { nombre: nombre, marca: marca, cantidad: cantidad, precio: precio, codigo: codigo, id: id, opcion: opcion },
+
+            success: function(data) {
+                id = data[0].id;
+                nombre = data[0].nombre;
+                marca = data[0].marca;
+                cantidad = data[0].cantidad;
+                precio = data[0].precio;
+                codigo = data[0].codigo;
+                tablaProductos.row(fila).data([id, nombre, marca, cantidad, precio, codigo]).draw();
+            }
+        });
+
     });
 
     $("#formProductos").submit(function(e) {
