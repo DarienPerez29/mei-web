@@ -42,31 +42,7 @@ switch($opcion){
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-        break;     
-        
-    case 4://resta
-        $cantidad = $cantidad - 1;
-        $consulta = "UPDATE productos SET nombre='$nombre', marca='$marca', codigo='$codigo', cantidad='$cantidad', precio='$precio' WHERE id='$id' ";		
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute(); 
-        
-        $consulta = "SELECT id, nombre, marca, codigo, cantidad, precio FROM productos WHERE id='$id' ";       
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute();
-        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-        break;  
-
-    case 5://aumento
-        $cantidad = $cantidad + 1;
-        $consulta = "UPDATE productos SET nombre='$nombre', marca='$marca', codigo='$codigo', cantidad='$cantidad', precio='$precio' WHERE id='$id' ";		
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute(); 
-        
-        $consulta = "SELECT id, nombre, marca, codigo, cantidad, precio FROM productos WHERE id='$id' ";       
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute();
-        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-        break;  
+        break;
 }
 
 print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en formato json a JS
