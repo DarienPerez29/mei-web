@@ -29,11 +29,21 @@
             </div>
 
             <div class="col-md-7 col-lg-8 mt-3">
-                <form class="needs-validation" novalidate>
+
+                <!-- formulario de contacto -->
+                <form class="needs-validation" action="https://formsubmit.co/dapec_115@hotmail.com" method="POST" novalidate>
+                    <!-- Honeypot -->
+                    <input type="text" name="_honey" style="display: none;">
+
+                    <!-- Disable Captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <input type="hidden" name="_next" value="contact-success.html">
+
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label class="form-label">Nombre(s)</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="Nombre" required>
                             <div class="invalid-feedback">
                                 Ingresa tu(s) nombre(s)
                             </div>
@@ -41,7 +51,7 @@
 
                         <div class="col-sm-6">
                             <label class="form-label">Apellido(s)</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="Apellidos" required>
                             <div class="invalid-feedback">
                                 Ingresa tu(s) apellido(s)
                             </div>
@@ -49,7 +59,7 @@
 
                         <div class="col-12">
                             <label class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" placeholder="correo@ejemplo.com" required>
+                            <input type="email" class="form-control" name="Email" placeholder="correo@ejemplo.com" required>
                             <div class="invalid-feedback">
                                 Ingresa un correo electrónico válido
                             </div>
@@ -57,12 +67,12 @@
 
                         <div class="col-12">
                             <label class="form-label">Tu empresa</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="Empresa">
                         </div>
 
                         <div class="col-12">
                             <label class="form-label">Mensaje</label>
-                            <textarea class="form-control" required style="height: 150px;"></textarea>
+                            <textarea class="form-control" required style="height: 150px;" name="Mensaje"></textarea>
                             <div class="invalid-feedback">
                                 Escribe tu mensaje, situación o pregunta
                             </div>
@@ -80,7 +90,7 @@
 
     <script src="../bootstrap/js/bootstrap.js"></script>
     <script src="../modules/main.js"></script>
-    <script src="../scripts/form-validation.js"></script>
+    <script src="../form-validation.js"></script>
 </body>
 
 
