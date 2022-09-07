@@ -41,4 +41,4 @@ if(isset($_POST["btnregistrar"]));
         echo "Error: ".$insertar."<br>".mysql_error($conn);
     }
 
-?>
+?>  

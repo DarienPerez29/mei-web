@@ -1,9 +1,9 @@
 <?php
 
 $servidor = "localhost";
-$user = "root";
-$pass = "";
-$db = "mei_login";
+$user = "darien_test";
+$pass = "darien_test";
+$db = "mei_db";
 
 $conn = mysqli_connect($servidor, $user, $pass, $db);
 
