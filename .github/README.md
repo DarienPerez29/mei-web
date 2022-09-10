@@ -7,12 +7,12 @@ Mie is a web-based CRUD system that is planed to work as a Point of Sale system 
 
 ---
 
-![Main page of Mei portal](main-portal-page.png)
+![Main page of Mei portal](main-portal-page1.png)
 *Main page of Mei portal*
 
 ---
 
-![Main page of Mei dashboard](main-dashboard-page.png)
+![Main page of Mei dashboard](main-dashboard-page1.png)
 *Main page of Mei dashboard*
 
 </div>
